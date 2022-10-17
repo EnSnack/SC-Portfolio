@@ -5,6 +5,7 @@ var projects = {
 				"This Website",
 				"Denne hjemmeside"
 			],
+			"link": "https://github.com/EnSnack/SC-Portfolio",
 			"images": [
 				"images/projects/1/1.png",
 				"images/projects/1/2.png",
@@ -44,6 +45,7 @@ var projects = {
 			"images": [
 				"images/projects/3/1.png"
 			],
+			"link": "https://github.com/EnSnack/WoW-SongflowerTimer",
 			"body": [
 				"An addon for the video game World of Warcraft that allows the user to keep track of an infamous and elusive flower called the Songflower, for a player buff that helps for content such as lategame raids. A better explanation on github.\n\n%lsRead More...%ae",
 				"En addon til spillet World of Warcraft der tillader brugeren at holde styr på en ukendt og undvigende blomst der hedder Songflower, som giver spilleren en buff der hjælper med slut raids. En bedre forklaring findes på Github.\n\n%lsLæs Mere...%ae"
