@@ -164,6 +164,7 @@ a {
 	top: 75px;
     bottom: 0;
     opacity: 1;
+	overflow-y: unset;
 }
 
 .content {
