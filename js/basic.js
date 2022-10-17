@@ -242,7 +242,7 @@ window.onload = function() {
 					if(node.lang != language) {
 					  node.style.display = 'none';
 					} else {
-					  node.style.display = 'unset';
+					  node.style.display = '';
 					}
 				});
 			}
