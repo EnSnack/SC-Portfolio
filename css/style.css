@@ -192,7 +192,7 @@ a {
     width: 25vw;
 }
 .medium-box {
-	height: 40vh;
+	height: 45%;
 	width: 20vw;
 }
 .large-box {
@@ -260,7 +260,6 @@ a {
   width:12%;
   height:200%;
   margin-left:8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
 }
 
 #where-am-i .button:hover {
@@ -307,7 +306,7 @@ a {
   position:absolute;
   padding:4px;
   pointer-events: none;
-  transition: 1000ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 #where-am-i .popup-active {
