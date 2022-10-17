@@ -99,7 +99,7 @@ function populateProjects(json) {
 		document.querySelector("#portfolio .content").innerHTML += `<div class='row-${parseInt(document.querySelector("div[class^=row-]:last-child").classList[0].split("-")[1])+1}' style='display:flex;flex-direction:row;'></div>`
 	}
 	const _CURRENT_ROW      = document.querySelector("div[class^=row-]:last-child")
-	let _CURRENT_BOX        = "<div class='contentbox'></div>"
+	let _CURRENT_BOX        = `<div class='contentbox ${Object.keys(json.Projects)[0]}'></div>`
 	_CURRENT_ROW.innerHTML += _CURRENT_BOX
 	_CURRENT_BOX            = _CURRENT_ROW.querySelector(".contentbox:last-child")
 	
