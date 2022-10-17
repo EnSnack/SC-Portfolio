@@ -12,8 +12,8 @@ var projects = {
 				"images/projects/1/3.png"
 			],
 			"body": [
-				"<b>Libraries:</b> Vanta.js & Splide.js\n<b>Tools:</b> Figma\n\nThe website you're reading this on, the pictures are of the process from a paper prototype, to a %as[https://www.figma.com/proto/4UfbgWuP2P6tcGyNAAv18J/Portfolio-Prototype---Please-Enable-Comments-for-Developer-Thoughts?node-id=1%3A56&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A56&show-proto-sidebar=1]functional prototype on figma%ae, to the actual website itself.\n\n%lsRead More...%ae",
-				"<b>Bibloteker:</b> Vanta.js & Splide.js\n<b>Værktøjer:</b> Figma\n\nDen hjemmesider du læser dette på, billederne er af processen fra en papirs prototype, til en %as[https://www.figma.com/proto/4UfbgWuP2P6tcGyNAAv18J/Portfolio-Prototype---Please-Enable-Comments-for-Developer-Thoughts?node-id=1%3A56&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A56&show-proto-sidebar=1]funktionel prototype på figma%ae, til den aktuelle hjemmeside.\n\n%lsLæs Mere...%ae"
+				"<b>Libraries:</b> Vanta.js & Splide.js\n<b>Tools:</b> Figma\n\nThe website you're reading this on, the pictures are of the process from a paper prototype, to a %as[https://www.figma.com/proto/4UfbgWuP2P6tcGyNAAv18J/Portfolio-Prototype---Please-Enable-Comments-for-Developer-Thoughts?node-id=1%3A56&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A56&show-proto-sidebar=1]functional prototype on figma (click here)%ae, to the actual website itself.\n\n%lsRead More...%ae",
+				"<b>Bibloteker:</b> Vanta.js & Splide.js\n<b>Værktøjer:</b> Figma\n\nDen hjemmesider du læser dette på, billederne er af processen fra en papirs prototype, til en %as[https://www.figma.com/proto/4UfbgWuP2P6tcGyNAAv18J/Portfolio-Prototype---Please-Enable-Comments-for-Developer-Thoughts?node-id=1%3A56&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A56&show-proto-sidebar=1]funktionel prototype på figma (klik her)%ae, til den aktuelle hjemmeside.\n\n%lsLæs Mere...%ae"
 			],
 			"footer": {
 				"date": "09/10-2022",
