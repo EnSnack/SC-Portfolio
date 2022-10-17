@@ -108,11 +108,11 @@ function populateProjects(json) {
 	//* Rids us some code duplication.
 	//const _TYPES            = ['name','','body']
 	if('name' in _FIRST_OBJECT) {
-		_CURRENT_BOX.innerHTML += `<div class='box-header'>${_FIRST_OBJECT['name'][0]}</div>`
+		_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header'>${_FIRST_OBJECT['name'][0]}</div></a>`
 		// Despite this checking for a length bigger than 1, we only support 2 languages.
 		if(_FIRST_OBJECT['name'].length > 1) {
 			_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", "en")
-			_CURRENT_BOX.innerHTML += `<div class='box-header' lang="dk">${_FIRST_OBJECT['name'][1]}</div>`
+			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="dk">${_FIRST_OBJECT['name'][1]}</div></a>`
 		}
 	}
 	if('images' in _FIRST_OBJECT) {
@@ -120,11 +120,11 @@ function populateProjects(json) {
 		if(_FIRST_OBJECT['images'].length > 1) {
 			_CURRENT_BOX.innerHTML += `<div class='box-image'><section id="image-carousel" class="splide" aria-label="${_FIRST_OBJECT['name']}"><div class="splide__track"><ul class="splide__list"></ul></div></section></div>`
 			for (const property in _FIRST_OBJECT['images']) {
-				_CURRENT_BOX.querySelector(".splide__list").innerHTML += `<li class="splide__slide"><img src="${_FIRST_OBJECT['images'][property]}"></li>`
+				_CURRENT_BOX.querySelector(".splide__list").innerHTML += `<li class="splide__slide"><a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][property]}"></a></li>`
 			}
 		} else {
 			_CURRENT_BOX.innerHTML += `<div class='box-image' aria-label="${_FIRST_OBJECT['name']}"></div>`
-			_CURRENT_BOX.querySelector(".box-image").innerHTML += `<img src="${_FIRST_OBJECT['images'][0]}">`
+			_CURRENT_BOX.querySelector(".box-image").innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][0]}"></a>`
 		}
 	}
 	if('body' in _FIRST_OBJECT) {
