@@ -135,14 +135,13 @@ function populateProjects(json) {
 		}
 		_CURRENT_BOX.querySelectorAll(`.box-body`).forEach((item) => item.innerHTML = item.innerHTML.format(_FIRST_OBJECT))
 	}
-	_CURRENT_BOX.innerHTML += `<div class="box-break"></div>`
 	if('footer' in _FIRST_OBJECT) {
-		_CURRENT_BOX.innerHTML += `<div class="box-footer"></div>`
+		_CURRENT_BOX.innerHTML += `<div class="box-footer"><div class="box-break"></div><div class="box-footer-data"></div></div>`
 		if('date' in _FIRST_OBJECT['footer']) {
-			_CURRENT_BOX.querySelector(`.box-footer`).innerHTML += `<div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div>`
+			_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div>`
 		}
 		if('language' in _FIRST_OBJECT['footer']) {
-			_CURRENT_BOX.querySelector(`.box-footer`).innerHTML += `<div class="box-footer-language cl-${_FIRST_OBJECT['footer']['language']}">${_FIRST_OBJECT['footer']['language']}</div>`
+			_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-language cl-${_FIRST_OBJECT['footer']['language']}">${_FIRST_OBJECT['footer']['language']}</div>`
 		}
 	}
 	

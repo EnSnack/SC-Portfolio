@@ -545,7 +545,7 @@ a {
 
 #portfolio .contentbox {
 	width:16.6vw;
-	height:44vh;
+	height:82%;
 	margin-left:2.5vw;
 	margin-right:2.5vw;
 	padding:30px;
@@ -582,7 +582,7 @@ a {
 }
 .box-body {
 	font-size: 14px;
-	height:15vh;
+	height:auto;
 	color: rgba(255, 255, 255, 0.7);
 	font-family: "Poppins", sans-serif;
 }
@@ -592,9 +592,14 @@ a {
 }
 .box-footer {
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	color: rgba(255, 255, 255, 0.7);
 	font-family: "Poppins", sans-serif;
+	margin-top:auto;
+}
+.box-footer-data {
+	display:flex;
+	flex-direction:row;
 	justify-content: space-between;
 }
 .box-footer-date {
