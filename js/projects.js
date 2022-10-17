@@ -54,6 +54,41 @@ var projects = {
 				"date": "18/09-2019",
 				"language": "Lua"
 			}
+		},
+		"item-4": {
+			"name": [
+				"Platformer Prototype"
+			],
+			"images": [
+				"images/projects/4/1.png"
+			],
+			"link": "https://github.com/EnSnack/GML-PFT-Prototype",
+			"body": [
+				"A very basic prototype of a platformer game inspired VERY heavily by Wario Land 4, one of my favourite platformers.\n\n%lsRead More...%ae",
+				"En meget basisk prototype af en platformer inspireret MEGET af Wario Land 4, en af mine yndlings platformer spil.\n\n%lsLæs Mere...%ae"
+			],
+			"footer": {
+				"date": "20/08-2018",
+				"language": "GML"
+			}
+		},
+		"item-5": {
+			"name": [
+				"RPG Prototype",
+				"Rollespils Prototype"
+			],
+			"images": [
+				"images/projects/5/1.png"
+			],
+			"link": "https://github.com/EnSnack/GML-RPG-Prototype",
+			"body": [
+				"A short prototype of an RPG game inspired by games like Super Mario RPG where timing is important.\n\n%lsRead More...%ae",
+				"En kort prototype af et rollespil inspireret af spil som Super Mario RPG hvor timing er vigtig.\n\n%lsLæs Mere...%ae"
+			],
+			"footer": {
+				"date": "05/07-2018",
+				"language": "GML"
+			}
 		}
 	}
 }
