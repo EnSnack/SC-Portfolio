@@ -110,7 +110,7 @@ function populateProjects(json) {
 	if('name' in _FIRST_OBJECT) {
 		_CURRENT_BOX.innerHTML += `<div class='box-header'>${_FIRST_OBJECT['name'][0]}</div>`
 		// Despite this checking for a length bigger than 1, we only support 2 languages.
-		if(_FIRST_OBJECT['body'].length > 1) {
+		if(_FIRST_OBJECT['name'].length > 1) {
 			_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", "en")
 			_CURRENT_BOX.innerHTML += `<div class='box-header' lang="dk">${_FIRST_OBJECT['name'][1]}</div>`
 		}
