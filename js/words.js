@@ -21,7 +21,7 @@ var _WORDS_JSON = {
       "dk": "dygtig"
     },
     {
-      "en": "p",
+      "en": "proficient",
       "dk": "kompetent"
     },
     {

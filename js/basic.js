@@ -148,7 +148,7 @@ function populateProjects(json) {
 
 window.onload = function() {
 	const _NOUN_TIME    = 4000;
-	const _ADJ_TIME     = 1500;
+	const _ADJ_TIME     = 2350;
 	const _CURSOR_BLINK = 500;
 	
 	// Honey, I'm home!
