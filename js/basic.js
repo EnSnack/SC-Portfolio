@@ -137,8 +137,12 @@ function populateProjects(json) {
 	}
 	_CURRENT_BOX.innerHTML += `<div class="box-break"></div>`
 	if('footer' in _FIRST_OBJECT) {
+		_CURRENT_BOX.innerHTML += `<div class="box-footer"></div>`
 		if('date' in _FIRST_OBJECT['footer']) {
-			_CURRENT_BOX.innerHTML += `<div class="box-footer"><div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div></div>`
+			_CURRENT_BOX.querySelector(`.box-footer`).innerHTML += `<div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div>`
+		}
+		if('language' in _FIRST_OBJECT['footer']) {
+			_CURRENT_BOX.querySelector(`.box-footer`).innerHTML += `<div class="box-footer-language cl-${_FIRST_OBJECT['footer']['language']}">${_FIRST_OBJECT['footer']['language']}</div>`
 		}
 	}
 	
