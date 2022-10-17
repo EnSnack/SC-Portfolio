@@ -533,10 +533,6 @@ a {
 /*
 # Projects
 */
-section#portfolio {
-	overflow-y:unset;
-}
-
 #portfolio .content {
 	flex-direction:column;
 }
