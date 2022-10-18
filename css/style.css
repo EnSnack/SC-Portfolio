@@ -550,7 +550,9 @@ a {
 
 #portfolio .contentbox {
 	width:100%;
+	max-width:420px;
 	height:100%;
+	max-height:460px;
 	margin-left:1.5%;
 	margin-right:1.5%;
 	padding:30px;
