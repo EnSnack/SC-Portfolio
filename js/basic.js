@@ -189,9 +189,9 @@ window.onload = function() {
 	},_ADJ_TIME)
 	setInterval(function() {
 		if(!TypeWriterActive) {
-			document.querySelector("#what-cursor").style.display = (document.querySelector("#what-cursor").style.display == "none") ? "unset" : "none";
+			document.querySelector("#what-cursor").style.display = (document.querySelector("#what-cursor").style.display == "none") ? "" : "none";
 		} else {
-			document.querySelector("#what-cursor").style.display = "unset";
+			document.querySelector("#what-cursor").style.display = "";
 		}
 	},_CURSOR_BLINK)
 	
