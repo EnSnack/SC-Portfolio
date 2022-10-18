@@ -163,6 +163,8 @@ window.onload = function() {
 	populateProjects(projects);
 	// Hide unusued language
 	document.querySelectorAll(`body *[lang=${_LOCALES[+!_LOCALES.indexOf(CurrentActiveLanguage)]}]`).forEach((node) => node.style.display = 'none');
+	// Set active language
+	document.querySelector(`#lang-${CurrentActiveLanguage}`).classList.toggle("active-language")
 	
 	// Mount all image carousels, splide necessity.
 	new Splide( '#image-carousel' ).mount();

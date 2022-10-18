@@ -210,6 +210,24 @@ a {
 	top: 45px;
 }
 
+@media screen and (max-width: 450px) {
+	#who-am-i.contentbox-header {
+		font-size:24px;
+		margin-top:10%
+	}
+}
+
+@media screen and (max-width: 400px) {	
+	#what-am-i {
+		font-size:14px !important;
+		margin-left:14px !important;
+	}
+	
+	.content #what-am-i .what-inline:before {
+		top:16px !important;
+	}
+}
+
 #home .content {
 	justify-content: center;
     align-items: center;
