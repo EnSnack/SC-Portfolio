@@ -57,10 +57,28 @@ var projects = {
 		},
 		"item-4": {
 			"name": [
-				"Platformer Prototype"
+				"Java Uni Assignments",
+				"Java Uni Opgaver"
 			],
 			"images": [
 				"images/projects/4/1.png"
+			],
+			"link": "https://github.com/EnSnack/Uni-Assignments-Java",
+			"body": [
+				"<b>Tools:</b> BlueJ\nVarious assignments in Java during University. Both from the programming class and the Data Structures and Algorithms class.\n%lsRead More...%ae",
+				"<b>Værktøjer:</b> BlueJ\nVarieret opgaver i Java fra Universitetet. Både fra programmerings klassen samt Data Strukturer og Algoritmer klassen.\n%lsLæs Mere...%ae"
+			],
+			"footer": {
+				"date": "27/08-2018",
+				"language": "Java"
+			}
+		},
+		"item-5": {
+			"name": [
+				"Platformer Prototype"
+			],
+			"images": [
+				"images/projects/5/1.png"
 			],
 			"link": "https://github.com/EnSnack/GML-PFT-Prototype",
 			"body": [
@@ -72,13 +90,13 @@ var projects = {
 				"language": "GML"
 			}
 		},
-		"item-5": {
+		"item-6": {
 			"name": [
 				"RPG Prototype",
 				"Rollespils Prototype"
 			],
 			"images": [
-				"images/projects/5/1.png"
+				"images/projects/6/1.png"
 			],
 			"link": "https://github.com/EnSnack/GML-RPG-Prototype",
 			"body": [
@@ -88,6 +106,23 @@ var projects = {
 			"footer": {
 				"date": "05/07-2018",
 				"language": "GML"
+			}
+		},
+		"item-7": {
+			"name": [
+				"ConfessionBot"
+			],
+			"images": [
+				"images/projects/7/1.jpg"
+			],
+			"link": "https://github.com/EnSnack/Uni-ConfessionBot",
+			"body": [
+				"<b>Tools:</b> Processing\nUniversity project on a bot that retweets people's confessions. Done as an aesthetic project as a provocation towards releasing confessions on an online medium.\nTwitter link can be found %as[https://twitter.com/ConfessionB0t]HERE%ae. \n%lsRead More...%ae",
+				"<b>Værktøjer:</b> Processing\nUniversitets projekt på en bot der retweeter folks tilståelser. Lavet som et æstetisk projekt som en provokation mod at udgive tilståelser på et online medium.\nTwitter link kan findes %as[https://twitter.com/ConfessionB0t]HER%ae\n%lsLæs Mere...%ae"
+			],
+			"footer": {
+				"date": "27/04-2016",
+				"language": "Processing"
 			}
 		}
 	}
