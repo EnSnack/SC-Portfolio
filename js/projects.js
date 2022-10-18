@@ -124,6 +124,24 @@ var projects = {
 				"date": "27/04-2016",
 				"language": "Processing"
 			}
+		},
+		"item-8": {
+			"name": [
+				"Processing Uni Assignments",
+				"Processing Uni Opgaver"
+			],
+			"images": [
+				"images/projects/8/1.png"
+			],
+			"link": "https://github.com/EnSnack/Uni-Assignments-Processing",
+			"body": [
+				"<b>Tools:</b> Processing\nA series of projects done either as an assignment or during University to train myself in processing. Some may have images, and some may have an excessive amount of documentation.\n%lsRead More...%ae",
+				"<b>Værktøjer:</b> Processing\nEn serie af projekter lavet enten som en opgave eller i løbet af universitetet for at træne mig selv i processing. Nogle har måske billeder, mens andre har overdrevet meget dokumentation.\n%lsLæs Mere...%ae"
+			],
+			"footer": {
+				"date": "09/03-2016",
+				"language": "Processing"
+			}
 		}
 	}
 }
