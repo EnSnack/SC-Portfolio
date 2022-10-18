@@ -95,12 +95,12 @@ String.prototype.format = function(o) {
 function populateProjects(json) {
 	if(Object.keys(json.Projects).length == 0) return;
 	const _FIRST_OBJECT = json.Projects[Object.keys(json.Projects)[0]]
-	if(document.querySelector("div[class^=row-]:last-child") === null || document.querySelector("div[class^=row-]:last-child").length === 0) {
-		document.querySelector("#portfolio .content").innerHTML += "<div class='row-1' style='display:flex;flex-direction:row;'></div>"
-	} else if(document.querySelectorAll("div[class^=row-]:last-child > *").length >= 4) {
-		document.querySelector("#portfolio .content").innerHTML += `<div class='row-${parseInt(document.querySelector("div[class^=row-]:last-child").classList[0].split("-")[1])+1}' style='display:flex;flex-direction:row;'></div>`
+	if(document.querySelector("div[id^=row-]:last-child") === null || document.querySelector("div[id^=row-]:last-child").length === 0) {
+		document.querySelector("#portfolio .content").innerHTML += "<div class='row' id='row-1' style='display:flex;flex-direction:row;'></div>"
+	} else if(document.querySelectorAll("div[id^=row-]:last-child > *").length >= 4) {
+		document.querySelector("#portfolio .content").innerHTML += `<div id='row-${parseInt(document.querySelector("div[id^=row-]:last-child").classList[0].split("-")[1])+1}' style='display:flex;flex-direction:row;'></div>`
 	}
-	const _CURRENT_ROW      = document.querySelector("div[class^=row-]:last-child")
+	const _CURRENT_ROW      = document.querySelector("div[id^=row-]:last-child")
 	let _CURRENT_BOX        = `<div class='contentbox ${Object.keys(json.Projects)[0]}'></div>`
 	_CURRENT_ROW.innerHTML += _CURRENT_BOX
 	_CURRENT_BOX            = _CURRENT_ROW.querySelector(".contentbox:last-child")
