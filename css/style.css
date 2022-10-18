@@ -430,6 +430,11 @@ a {
     align-items: center;
 }
 
+#what-do-i-look-like img {
+	width:300px;
+	height:300px;
+}
+
 /*
 # Resume
 */
