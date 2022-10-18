@@ -213,7 +213,6 @@ a {
 
 @media screen and (max-width: 450px) {
 	#home.section-show {
-		top: 45px;
 		overflow-y:hidden;
 	}
 	#who-am-i.contentbox-header {
