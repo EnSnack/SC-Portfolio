@@ -2,61 +2,61 @@ var _WORDS_JSON = {
   "Adjectives": [
     {
       "en": "modern",
-      "dk": "moderne"
+      "da": "moderne"
     },
     {
       "en": "enthusiastic",
-      "dk": "entusiastisk"
+      "da": "entusiastisk"
     },
     {
       "en": "versatile",
-      "dk": "alsidig"
+      "da": "alsidig"
     },
     {
       "en": "astute",
-      "dk": "kløgtig"
+      "da": "kløgtig"
     },
     {
       "en": "skilled",
-      "dk": "dygtig"
+      "da": "dygtig"
     },
     {
       "en": "proficient",
-      "dk": "kompetent"
+      "da": "kompetent"
     },
     {
       "en": "keen",
-      "dk": "ivrig"
+      "da": "ivrig"
     },
     {
       "en": "systematic",
-      "dk": "systematisk"
+      "da": "systematisk"
     },
     {
       "en": "passionate",
-      "dk": "passioneret"
+      "da": "passioneret"
     }
   ],
   "Nouns": [
     {
       "en": "engineer",
-      "dk": "ingeniør"
+      "da": "ingeniør"
     },
     {
       "en": "teacher",
-      "dk": "lærer"
+      "da": "lærer"
     },
     {
       "en": "learner",
-      "dk": "lærende"
+      "da": "lærende"
     },
     {
       "en": "leader",
-      "dk": "leder"
+      "da": "leder"
     },
     {
       "en": "programmer",
-      "dk": "programmør"
+      "da": "programmør"
     }
   ]
 }

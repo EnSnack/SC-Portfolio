@@ -1,8 +1,10 @@
 /*
 	Typewriter Style Text
 */
+const _LOCALES = ['en', 'da'];
 let TypeWriterActive = false;
-let CurrentActiveLanguage = 'en';
+let CurrentActiveLanguage = navigator.userLanguage || navigator.language;
+CurrentActiveLanguage = _LOCALES.includes(CurrentActiveLanguage.substring(0,2)) ? CurrentActiveLanguage.substring(0,2) : 'en'
 
 /**
  * Writes text similar to that of a typewriter.
@@ -111,7 +113,7 @@ function populateProjects(json) {
 		// Despite this checking for a length bigger than 1, we only support 2 languages.
 		if(_FIRST_OBJECT['name'].length > 1) {
 			_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", "en")
-			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="dk">${_FIRST_OBJECT['name'][1]}</div></a>`
+			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="da">${_FIRST_OBJECT['name'][1]}</div></a>`
 		}
 	}
 	if('images' in _FIRST_OBJECT) {
@@ -131,7 +133,7 @@ function populateProjects(json) {
 		// Despite this checking for a length bigger than 1, we only support 2 languages.
 		if(_FIRST_OBJECT['body'].length > 1) {
 			_CURRENT_BOX.querySelector(`.box-body`).setAttribute("lang", "en")
-			_CURRENT_BOX.innerHTML += `<div class='box-body' lang="dk">${_FIRST_OBJECT['body'][1]}</div>`
+			_CURRENT_BOX.innerHTML += `<div class='box-body' lang="da">${_FIRST_OBJECT['body'][1]}</div>`
 		}
 		_CURRENT_BOX.querySelectorAll(`.box-body`).forEach((item) => item.innerHTML = item.innerHTML.format(_FIRST_OBJECT))
 	}
@@ -158,8 +160,8 @@ window.onload = function() {
 	document.querySelector("#home").classList.toggle("section-show")
 	// Populate projects, this may take a second...
 	populateProjects(projects);
-	// Base language is English
-	document.querySelectorAll("body *[lang=dk]").forEach((node) => node.style.display = 'none');
+	// Hide unusued language
+	document.querySelectorAll(`body *[lang=${_LOCALES[+!_LOCALES.indexOf(CurrentActiveLanguage)]}]`).forEach((node) => node.style.display = 'none');
 	
 	// Mount all image carousels, splide necessity.
 	new Splide( '#image-carousel' ).mount();
@@ -233,7 +235,6 @@ window.onload = function() {
 	/*
 		Localize Function for Language Handling
 	*/
-	const _LOCALES = ['en', 'dk'];
 	document.querySelectorAll(".language").forEach((item) => {
 		item.addEventListener("click", function (data) {
 			let language = data.target.parentElement.id.split("-")[1] 
