@@ -4,6 +4,7 @@
 
 #header {
 	display:flex;
+	flex-direction:column;
 }
 
 /*
@@ -21,7 +22,6 @@
 #language-box .language {
   width:16px;
   height:16px;
-  margin-right:5px;
   display: inline-block;
   border-radius:50%;
   filter:brightness(50%);
@@ -79,8 +79,9 @@ a {
   right:0;
   padding:10px 50px;
   background:rgba(0,0,0,0.5);
-  width:355px;
+  width:70%;
   justify-content: center;
+  flex-direction:column;
 }
 
 #navbar ul {
@@ -94,6 +95,7 @@ a {
 
 #navbar li {
   position: relative;
+  width: 33%;
 }
 
 #navbar li + li {
@@ -192,7 +194,7 @@ a {
     width: 25vw;
 }
 .medium-box {
-	height: 45%;
+	height: 395px;
 	width: 20vw;
 }
 .large-box {
