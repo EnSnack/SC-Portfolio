@@ -155,6 +155,7 @@ window.onload = function() {
 	const _NOUN_TIME    = 4000;
 	const _ADJ_TIME     = 2350;
 	const _CURSOR_BLINK = 500;
+	const _WRITE_SPEED  = 150;
 	
 	// Honey, I'm home!
 	document.querySelector("#home").classList.toggle("section-show")
@@ -169,7 +170,7 @@ window.onload = function() {
 	let adjIndex=0;
 	let nounIndex=0;
 	setInterval(function() {
-		write("what-noun",_WORDS_JSON.Nouns[nounIndex][CurrentActiveLanguage],150,150).then((success) => {
+		write("what-noun",_WORDS_JSON.Nouns[nounIndex][CurrentActiveLanguage],_WRITE_SPEED,_WRITE_SPEED).then((success) => {
 			if(success) {
 				nounIndex=nounIndex>=_WORDS_JSON.Nouns.length-1?0:nounIndex+1;
 			}
@@ -178,7 +179,7 @@ window.onload = function() {
 		})
 	},_NOUN_TIME)
 	setInterval(function() {
-		write("what-adj",_WORDS_JSON.Adjectives[adjIndex][CurrentActiveLanguage],150,150).then((success) => {
+		write("what-adj",_WORDS_JSON.Adjectives[adjIndex][CurrentActiveLanguage],_WRITE_SPEED,_WRITE_SPEED).then((success) => {
 			if(success) {				
 				adjIndex=adjIndex>=_WORDS_JSON.Adjectives.length-1?0:adjIndex+1;
 			}
