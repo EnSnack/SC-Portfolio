@@ -5,6 +5,7 @@
 #header {
     max-width: 400px;
     margin: -6px auto;
+	z-index:99999;
 }
 
 /*
