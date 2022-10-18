@@ -98,7 +98,7 @@ function populateProjects(json) {
 	if(document.querySelector("div[id^=row-]:last-child") === null || document.querySelector("div[id^=row-]:last-child").length === 0) {
 		document.querySelector("#portfolio .content").innerHTML += "<div class='row' id='row-1' style='display:flex;flex-direction:row;'></div>"
 	} else if(document.querySelectorAll("div[id^=row-]:last-child > *").length >= 4) {
-		document.querySelector("#portfolio .content").innerHTML += `<div id='row-${parseInt(document.querySelector("div[id^=row-]:last-child").classList[0].split("-")[1])+1}' style='display:flex;flex-direction:row;'></div>`
+		document.querySelector("#portfolio .content").innerHTML += `<div class='row' id='row-${parseInt(document.querySelector("div[id^=row-]:last-child").id.split("-")[1])+1}' style='display:flex;flex-direction:row;'></div>`
 	}
 	const _CURRENT_ROW      = document.querySelector("div[id^=row-]:last-child")
 	let _CURRENT_BOX        = `<div class='contentbox ${Object.keys(json.Projects)[0]}'></div>`
