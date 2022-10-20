@@ -469,7 +469,7 @@ a {
 	  left:60%;
 	}
 	.popup-header #copy .popup-tooltip-box-active {
-		right:75% !important;
+		right:100% !important;
 	}
 }
 
