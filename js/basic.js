@@ -96,9 +96,9 @@ function populateProjects(json) {
 	if(Object.keys(json.Projects).length == 0) return;
 	const _FIRST_OBJECT = json.Projects[Object.keys(json.Projects)[0]]
 	if(document.querySelector("div[id^=row-]:last-child") === null || document.querySelector("div[id^=row-]:last-child").length === 0) {
-		document.querySelector("#portfolio .content").innerHTML += "<div class='row' id='row-1' style='display:flex;flex-direction:row;'></div>"
+		document.querySelector("#portfolio .content").innerHTML += "<div class='row' id='row-1'></div>"
 	} else if(document.querySelectorAll("div[id^=row-]:last-child > *").length >= 4) {
-		document.querySelector("#portfolio .content").innerHTML += `<div class='row' id='row-${parseInt(document.querySelector("div[id^=row-]:last-child").id.split("-")[1])+1}' style='display:flex;flex-direction:row;'></div>`
+		document.querySelector("#portfolio .content").innerHTML += `<div class='row' id='row-${parseInt(document.querySelector("div[id^=row-]:last-child").id.split("-")[1])+1}'></div>`
 	}
 	const _CURRENT_ROW      = document.querySelector("div[id^=row-]:last-child")
 	let _CURRENT_BOX        = `<div class='contentbox ${Object.keys(json.Projects)[0]}'></div>`
