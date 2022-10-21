@@ -22,6 +22,24 @@ var projects = {
 		},
 		"item-2": {
 			"name": [
+				"Card Database",
+				"Kort Database"
+			],
+			"link": "https://github.com/EnSnack/Card-Database",
+			"images": [
+				"images/projects/9/1.png"
+			],
+			"body": [
+				"A simple card database with fake cards, written to show my, albeit not very well since it is very basic, skill in TypeScript, but it does give a pretty good idea.\n%lsRead More...%ae",
+				"En simpel kort database med falske kort, lavet eksklusivt for at vise mine TypeScript evner, selvom at siden er basisk burde den stadig give en god idé.\n%lsLæs Mere...%ae"
+			],
+			"footer": {
+				"date": "21/10-2022",
+				"language": "TypeScript"
+			}	
+		},
+		"item-3": {
+			"name": [
 				"Reverse Integer",
 				"Omvendt Integer"
 			],
@@ -38,7 +56,7 @@ var projects = {
 				"language": "JavaScript"
 			}	
 		},
-		"item-3": {
+		"item-4": {
 			"name": [
 				"Songflower Timer Keeper"
 			],
@@ -55,7 +73,7 @@ var projects = {
 				"language": "Lua"
 			}
 		},
-		"item-4": {
+		"item-5": {
 			"name": [
 				"Java Uni Assignments",
 				"Java Uni Opgaver"
@@ -73,7 +91,7 @@ var projects = {
 				"language": "Java"
 			}
 		},
-		"item-5": {
+		"item-6": {
 			"name": [
 				"Platformer Prototype"
 			],
@@ -90,7 +108,7 @@ var projects = {
 				"language": "GML"
 			}
 		},
-		"item-6": {
+		"item-7": {
 			"name": [
 				"RPG Prototype",
 				"Rollespils Prototype"
@@ -108,7 +126,7 @@ var projects = {
 				"language": "GML"
 			}
 		},
-		"item-7": {
+		"item-8": {
 			"name": [
 				"ConfessionBot"
 			],
@@ -125,7 +143,7 @@ var projects = {
 				"language": "Processing"
 			}
 		},
-		"item-8": {
+		"item-9": {
 			"name": [
 				"Processing Uni Assignments",
 				"Processing Uni Opgaver"
