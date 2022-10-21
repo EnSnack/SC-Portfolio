@@ -30,8 +30,8 @@ var projects = {
 				"images/projects/9/1.png"
 			],
 			"body": [
-				"A simple card database with fake cards, written to show my skill in TypeScript, and although the site is very basic but it does give a pretty good idea.\n%lsRead More...%ae",
-				"En simpel kort database med falske kort, lavet for at vise mine TypeScript evner, selvom at siden er basisk burde den stadig give en god idé.\n%lsLæs Mere...%ae"
+				"<b>Tools:</b> TypeScript & NodeJS\nA simple card database with fake cards, written to show my skill in TypeScript, and although the site is very basic but it does give a pretty good idea.\n%lsRead More...%ae",
+				"<b>Værktøjer:</b> TypeScript & NodeJS\nEn simpel kort database med falske kort, lavet for at vise mine TypeScript evner, selvom at siden er basisk burde den stadig give en god idé.\n%lsLæs Mere...%ae"
 			],
 			"footer": {
 				"date": "21/10-2022",
