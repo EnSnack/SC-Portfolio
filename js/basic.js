@@ -94,14 +94,17 @@ String.prototype.format = function(o) {
  */
 function populateProjects(json) {
 	if(Object.keys(json.Projects).length == 0) return;
-	const _FIRST_OBJECT = json.Projects[Object.keys(json.Projects)[0]]
+	const _FIRST_OBJECT = json.Projects[0]
+	
+	// Old row handling, no longer needed since we make amount of items on rows dynamic
 	/*if(document.querySelector("div[id^=row-]:last-child") === null || document.querySelector("div[id^=row-]:last-child").length === 0) {
 		document.querySelector("#portfolio .content").innerHTML += "<div class='row' id='row-1'></div>"
 	} else if(document.querySelectorAll("div[id^=row-]:last-child > *").length >= 4) {
 		document.querySelector("#portfolio .content").innerHTML += `<div class='row' id='row-${parseInt(document.querySelector("div[id^=row-]:last-child").id.split("-")[1])+1}'></div>`
 	}*/
+	
 	const _CURRENT_ROW      = document.querySelector("#displayRow")
-	let _CURRENT_BOX        = `<div class='contentbox ${Object.keys(json.Projects)[0]}'></div>`
+	let _CURRENT_BOX        = `<div class='contentbox item-${document.querySelectorAll("#displayRow > div").length}'></div>`
 	_CURRENT_ROW.innerHTML += _CURRENT_BOX
 	_CURRENT_BOX            = _CURRENT_ROW.querySelector(".contentbox:last-child")
 	
@@ -147,7 +150,7 @@ function populateProjects(json) {
 		}
 	}
 	
-	delete json.Projects[Object.keys(json.Projects)[0]]
+	json.Projects.splice(0,1)
 	populateProjects(json)
 }
 

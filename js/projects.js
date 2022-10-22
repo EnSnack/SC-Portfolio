@@ -1,6 +1,6 @@
 var projects = {
-	"Projects": {
-		"item-1": {
+	"Projects": [
+		{
 			"name": [
 				"This Website",
 				"Denne hjemmeside"
@@ -20,7 +20,7 @@ var projects = {
 				"language": "JavaScript"
 			}
 		},
-		"item-2": {
+		{
 			"name": [
 				"Card Database",
 				"Kort Database"
@@ -38,7 +38,7 @@ var projects = {
 				"language": "TypeScript"
 			}	
 		},
-		"item-3": {
+		{
 			"name": [
 				"Reverse Integer",
 				"Omvendt Integer"
@@ -56,7 +56,7 @@ var projects = {
 				"language": "JavaScript"
 			}	
 		},
-		"item-4": {
+		{
 			"name": [
 				"Songflower Timer Keeper"
 			],
@@ -73,7 +73,7 @@ var projects = {
 				"language": "Lua"
 			}
 		},
-		"item-5": {
+		{
 			"name": [
 				"Java Uni Assignments",
 				"Java Uni Opgaver"
@@ -91,7 +91,7 @@ var projects = {
 				"language": "Java"
 			}
 		},
-		"item-6": {
+		{
 			"name": [
 				"Platformer Prototype"
 			],
@@ -108,7 +108,7 @@ var projects = {
 				"language": "GML"
 			}
 		},
-		"item-7": {
+		{
 			"name": [
 				"RPG Prototype",
 				"Rollespils Prototype"
@@ -126,7 +126,7 @@ var projects = {
 				"language": "GML"
 			}
 		},
-		"item-8": {
+		{
 			"name": [
 				"ConfessionBot"
 			],
@@ -143,7 +143,7 @@ var projects = {
 				"language": "Processing"
 			}
 		},
-		"item-9": {
+		{
 			"name": [
 				"Processing Uni Assignments",
 				"Processing Uni Opgaver"
@@ -161,5 +161,5 @@ var projects = {
 				"language": "Processing"
 			}
 		}
-	}
+	]
 }
