@@ -232,13 +232,15 @@ a {
   color: rgba(255, 255, 255, 0.7);
   margin:25px;
   position:relative;
+  display:flex;
+  align-items: center;
 }
 
 .content #where-am-i {
   display:flex;
   margin:25px;
   margin-top:auto;
-  margin-bottom:40px;
+  margin-bottom:10px;
   z-index:999;
 }
 
@@ -251,7 +253,7 @@ a {
   background: rgba(255, 255, 255, 0.1);
   width:100%;
   max-width:40px;
-  height:200%;
+  height:100%;
   margin-left:2.5%;
   transition: background 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
 }
@@ -265,7 +267,7 @@ a {
   width:50%;
   height:50%;
   padding:0;
-  margin:auto;
+  margin:25%;
   vertical-align:middle;
   color:white;
 }
@@ -431,7 +433,14 @@ a {
 	width:100%;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width:450px) {
+	#what-am-i {
+		margin-left:14px !important;
+		margin-right:15px !important;
+	}
+}
+
+@media screen and (max-width: 450px), (max-height: 450px) {
 	.section-show {
 		top: 0;
 	}
@@ -440,17 +449,12 @@ a {
 		margin-top:10%
 	}
 	
-	#what-am-i {
-		margin-left:14px !important;
-		margin-right:15px !important;
-	}
-	
 	#what-adj {
 		margin-bottom:10px;
 	}
 }
 
-@media screen and (max-width: 400px) {	
+@media screen and (max-width: 400px), (max-height: 450px) {	
 	#what-am-i {
 		font-size:14px !important;
 	}
@@ -470,6 +474,32 @@ a {
 	}
 	.popup-header #copy .popup-tooltip-box-active {
 		right:100% !important;
+	}
+}
+
+@media screen and (max-height:450px) {
+	section#home {
+		overflow:hidden;
+	}
+	#home .content {
+		height:85vh;
+	}
+	.medium-box {
+		height:75% !important;
+	}
+	.contentbox-header {
+		margin: 4% 4.8% !important;
+	}
+	#who-am-i {
+		margin-top:4% !important;
+	}
+	#what-am-i {
+		margin:10px !important;
+		margin-left:25px !important;
+		height:35%;
+	}
+	#what-do-i-look-like img {
+		width: 65% !important;
 	}
 }
 
@@ -582,12 +612,16 @@ a {
 #skills .item-content p {
 	padding-bottom:20px;
 }
+#skills .item-content li {
+	margin-left:30px;
+	margin-right:20px;
+}
 .item-content p {
 	padding-bottom:7px;
 	margin:0;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 450px) or (max-height:450px) {
 	#resume .content {
 		flex-direction:column;
 		align-items: center;
