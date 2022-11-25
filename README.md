@@ -21,7 +21,7 @@ My university degree between 2015-2019 had its impact on my coding as well, the 
 
 Since me finishing university in 2019, and spending time looking for a job, I have not stopped improving my skill set. In 2019 I coded [a WoW addon](https://github.com/EnSnack/WoW-SongflowerTimer) in Lua aimed at simplifying people's lives, I also coded many other smaller addons for WoW that I have not uploaded. 
 
-Starting in 2020, I taught myself how to use NodeJS and got very interested in expanding my understanding of the many modules available for node, I started coding a discord bot in DiscordJS with a functional MySQL database associated to it. I started using a bunch of different modules for personal use.
+Starting in 2020, I taught myself how to use NodeJS and got very interested in expanding my understanding of the many modules available for node, I started coding a discord bot in DiscordJS with a functional MySQL database associated to it. I started using a bunch of different modules for personal use, I could list them but due to dependency hierarchy that would make a very long list, instead I would recommend looking around on GitHub for projects that may use some.
 
 In 2021, I wanted to challenge myself further and found a bunch of interview-related challenges, while I did do a lot more than just [the reverse integer one](https://github.com/EnSnack/JS-ReverseInteger-Fast), I never did any of them quite that fast, so I decided to pick just one challenge and do really well on it.
 
