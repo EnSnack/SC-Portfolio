@@ -2,7 +2,7 @@
 const _LOCALES = ['en', 'da'];
 let TypeWriterActive = false;
 let CurrentActiveLanguage = navigator.userLanguage || navigator.language;
-CurrentActiveLanguage = _LOCALES.includes(CurrentActiveLanguage.substring(0,2)) ? CurrentActiveLanguage.substring(0,2) : 'en'
+CurrentActiveLanguage = _LOCALES.includes(CurrentActiveLanguage.substring(0,2)) ? CurrentActiveLanguage.substring(0,2) : 'en';
 
 /**
  * Writes text similar to that of a typewriter.
@@ -15,32 +15,32 @@ CurrentActiveLanguage = _LOCALES.includes(CurrentActiveLanguage.substring(0,2)) 
  */
 function write(id,word,dspeed,wspeed) {
 	return new Promise((resolve) => {
-		const element = document.querySelector(`[lang="${CurrentActiveLanguage}"][id="${id}"]`)
+		const element = document.querySelector(`[lang="${CurrentActiveLanguage}"][id="${id}"]`);
 		
 		// Failsafe
 		if(TypeWriterActive || word.length <= 0 || !isNaN(word) || word.length > 16) return;
 		
-		blinkingCursor(element)
+		blinkingCursor(element);
 		
 		TypeWriterActive = true;
 		
 		// Erasing our current word
 		let erase = setInterval(function() {
 			if(element.innerHTML.length == 0) {
-				clearInterval(erase)
+				clearInterval(erase);
 				erase = null;
 				
 				// Hard-coded exceptions for the English language.
 				// Just checking for the letter isn't going to work, A vs An is based on sound, not letter.
 				if(CurrentActiveLanguage == _LOCALES[0] && id == "what-adj") {
-					const _EXCEPTIONS = ["enthusiastic","astute"]
-					document.getElementById("what-pre").innerHTML = _EXCEPTIONS.includes(word) ? "An" : "A"
+					const _EXCEPTIONS = ["enthusiastic","astute"];
+					document.getElementById("what-pre").innerHTML = _EXCEPTIONS.includes(word) ? "An" : "A";
 				}
 			}
 			if(element.innerHTML.length > 0) {
-				element.innerHTML = element.innerHTML.substring(0,element.innerHTML.length-1)
+				element.innerHTML = element.innerHTML.substring(0,element.innerHTML.length-1);
 			}
-		},(!isNaN(dspeed) && dspeed > 0 ? dspeed : 150))
+		},(!isNaN(dspeed) && dspeed > 0 ? dspeed : 150));
 		
 		// Writing our new word
 		let i=0;
@@ -48,14 +48,14 @@ function write(id,word,dspeed,wspeed) {
 			if(element.innerHTML == word) {
 				clearInterval(write);
 				write = null;
-				TypeWriterActive = false
+				TypeWriterActive = false;
 				resolve(true);
 			}
 			if(element.innerHTML.length < word.length && erase == null) {
-				element.innerHTML+=word.charAt(i++)
+				element.innerHTML+=word.charAt(i++);
 			}
-		},(!isNaN(wspeed) && wspeed > 0 ? wspeed : 150))
-	})
+		},(!isNaN(wspeed) && wspeed > 0 ? wspeed : 150));
+	});
 }
 
 /**
@@ -87,7 +87,7 @@ String.prototype.format = function(o) {
 		   // Format %as[<link>] -> <a href=<link>> ; Link content
 		   .replace(/\%as\[(.*?)\]/g, `<a href='$1' target='_blank'>`)
 		   // Format %ae -> </a> ; Link end
-		   .replace(/\%ae/g, `</a>`)
+		   .replace(/\%ae/g, `</a>`);
 };
 
 /**
@@ -97,54 +97,54 @@ String.prototype.format = function(o) {
  */
 function populateProjects(json) {
 	if(Object.keys(json.Projects).length == 0) return;
-	const _FIRST_OBJECT = json.Projects[0]
+	const _FIRST_OBJECT = json.Projects[0];
 	
-	const _CURRENT_ROW      = document.querySelector("#displayRow")
-	let _CURRENT_BOX        = `<div class='contentbox item-${document.querySelectorAll("#displayRow > div").length}'></div>`
-	_CURRENT_ROW.innerHTML += _CURRENT_BOX
-	_CURRENT_BOX            = _CURRENT_ROW.querySelector(".contentbox:last-child")
+	const _CURRENT_ROW      = document.querySelector("#displayRow");
+	let _CURRENT_BOX        = `<div class='contentbox item-${document.querySelectorAll("#displayRow > div").length}'></div>`;
+	_CURRENT_ROW.innerHTML += _CURRENT_BOX;
+	_CURRENT_BOX            = _CURRENT_ROW.querySelector(".contentbox:last-child");
 	try {
 		if('name' in _FIRST_OBJECT) {
-			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header'>${_FIRST_OBJECT['name'][0]}</div></a>`
+			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header'>${_FIRST_OBJECT['name'][0]}</div></a>`;
 			// Despite this checking for a length bigger than 1, we only support 2 languages.
 			if(_FIRST_OBJECT['name'].length > 1) {
-				_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", _LOCALES[0])
-				_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="da">${_FIRST_OBJECT['name'][1]}</div></a>`
+				_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", _LOCALES[0]);
+				_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="da">${_FIRST_OBJECT['name'][1]}</div></a>`;
 			}
 		}
 		if('images' in _FIRST_OBJECT) {
 			// Add carousel if we have multiple images, else don't.
 			if(_FIRST_OBJECT['images'].length > 1) {
-				_CURRENT_BOX.innerHTML += `<div class='box-image'><section id="image-carousel" class="splide" aria-label="${_FIRST_OBJECT['name']}"><div class="splide__track"><ul class="splide__list"></ul></div></section></div>`
+				_CURRENT_BOX.innerHTML += `<div class='box-image'><section id="image-carousel" class="splide" aria-label="${_FIRST_OBJECT['name']}"><div class="splide__track"><ul class="splide__list"></ul></div></section></div>`;
 				for (const property in _FIRST_OBJECT['images']) {
-					_CURRENT_BOX.querySelector(".splide__list").innerHTML += `<li class="splide__slide"><a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][property]}"></a></li>`
+					_CURRENT_BOX.querySelector(".splide__list").innerHTML += `<li class="splide__slide"><a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][property]}"></a></li>`;
 				}
 			} else {
-				_CURRENT_BOX.innerHTML += `<div class='box-image' aria-label="${_FIRST_OBJECT['name']}"></div>`
-				_CURRENT_BOX.querySelector(".box-image").innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][0]}"></a>`
+				_CURRENT_BOX.innerHTML += `<div class='box-image' aria-label="${_FIRST_OBJECT['name']}"></div>`;
+				_CURRENT_BOX.querySelector(".box-image").innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][0]}"></a>`;
 			}
 		}
 		if('body' in _FIRST_OBJECT) {
-			_CURRENT_BOX.innerHTML += `<div class='box-body'>${_FIRST_OBJECT['body'][0]}</div>`
+			_CURRENT_BOX.innerHTML += `<div class='box-body'>${_FIRST_OBJECT['body'][0]}</div>`;
 			// Despite this checking for a length bigger than 1, we only support 2 languages.
 			if(_FIRST_OBJECT['body'].length > 1) {
-				_CURRENT_BOX.querySelector(`.box-body`).setAttribute("lang", _LOCALES[0])
-				_CURRENT_BOX.innerHTML += `<div class='box-body' lang="da">${_FIRST_OBJECT['body'][1]}</div>`
+				_CURRENT_BOX.querySelector(`.box-body`).setAttribute("lang", _LOCALES[0]);
+				_CURRENT_BOX.innerHTML += `<div class='box-body' lang="da">${_FIRST_OBJECT['body'][1]}</div>`;
 			}
-			_CURRENT_BOX.querySelectorAll(`.box-body`).forEach((item) => item.innerHTML = item.innerHTML.format(_FIRST_OBJECT))
+			_CURRENT_BOX.querySelectorAll(`.box-body`).forEach((item) => item.innerHTML = item.innerHTML.format(_FIRST_OBJECT));
 		}
 		if('footer' in _FIRST_OBJECT) {
-			_CURRENT_BOX.innerHTML += `<div class="box-footer"><div class="box-break"></div><div class="box-footer-data"></div></div>`
+			_CURRENT_BOX.innerHTML += `<div class="box-footer"><div class="box-break"></div><div class="box-footer-data"></div></div>`;
 			if('date' in _FIRST_OBJECT['footer']) {
-				_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div>`
+				_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div>`;
 			}
 			if('language' in _FIRST_OBJECT['footer']) {
-				_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-language cl-${_FIRST_OBJECT['footer']['language']}">${_FIRST_OBJECT['footer']['language']}</div>`
+				_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-language cl-${_FIRST_OBJECT['footer']['language']}">${_FIRST_OBJECT['footer']['language']}</div>`;
 			}
 		}
 		
-		json.Projects.splice(0,1)
-		populateProjects(json)
+		json.Projects.splice(0,1);
+		populateProjects(json);
 	} catch(e) {
 		return;
 	}
@@ -158,13 +158,13 @@ window.onload = function() {
 	const _WRITE_SPEED  = 150;
 	
 	// Honey, I'm home!
-	document.querySelector("#home").classList.toggle("section-show")
+	document.querySelector("#home").classList.toggle("section-show");
 	// Populate projects, this may take a second...
 	populateProjects(projects);
 	// Hide unusued language
 	document.querySelectorAll(`body *[lang=${_LOCALES[+!_LOCALES.indexOf(CurrentActiveLanguage)]}]`).forEach((node) => node.style.display = 'none');
 	// Set active language
-	document.querySelector(`#lang-${CurrentActiveLanguage}`).classList.toggle("active-language")
+	document.querySelector(`#lang-${CurrentActiveLanguage}`).classList.toggle("active-language");
 	
 	// Mount all image carousels, splide necessity.
 	new Splide( '#image-carousel' ).mount();
@@ -180,7 +180,8 @@ window.onload = function() {
 		}).catch((e) => {
 			return console.error(e);
 		})
-	},_NOUN_TIME)
+	},_NOUN_TIME);
+	
 	// Adjective Handling, time based on _ADJ_TIME constant
 	setInterval(function() {
 		write("what-adj",_WORDS_JSON.Adjectives[adjIndex][CurrentActiveLanguage],_WRITE_SPEED,_WRITE_SPEED).then((success) => {
@@ -190,7 +191,8 @@ window.onload = function() {
 		}).catch((e) => {
 			return console.error(e);
 		})
-	},_ADJ_TIME)
+	},_ADJ_TIME);
+	
 	// Cursor Blinking Handling, time based on _CURSOR_BLINK constant
 	setInterval(function() {
 		if(!TypeWriterActive) {
@@ -198,18 +200,20 @@ window.onload = function() {
 		} else {
 			document.querySelector("#what-cursor").style.display = "";
 		}
-	},_CURSOR_BLINK)
+	},_CURSOR_BLINK);
 	
 	// Click event handler for page switching and navbar switching
-	document.querySelectorAll("#navbar #navbox ul li a").forEach((item) => { item.addEventListener("click", function() {
-		if(item.classList[1] == "active") return;
-		const _CUR_ACTIVE = document.querySelector(".nav-link.active");
-		
-		_CUR_ACTIVE.classList.toggle("active");
-		document.querySelector(_CUR_ACTIVE.getAttribute("href")).classList.toggle("section-show");
-		document.querySelector(item.getAttribute("href")).classList.toggle("section-show");
-		item.classList.toggle("active");
-	})})
+	document.querySelectorAll("#navbar #navbox ul li a").forEach((item) => { 
+		item.addEventListener("click", function() {
+			if(item.classList[1] == "active") return;
+			const _CUR_ACTIVE = document.querySelector(".nav-link.active");
+			
+			_CUR_ACTIVE.classList.toggle("active");
+			document.querySelector(_CUR_ACTIVE.getAttribute("href")).classList.toggle("section-show");
+			document.querySelector(item.getAttribute("href")).classList.toggle("section-show");
+			item.classList.toggle("active");
+		});
+	});
 
 	// Click event handler for popup button (and closing)
 	document.querySelectorAll(".btn-popup, #close").forEach((item) => { item.addEventListener("click", function (data) {
@@ -246,7 +250,7 @@ window.onload = function() {
     // Click event handler for localization
 	document.querySelectorAll(".language").forEach((item) => {
 		item.addEventListener("click", function (data) {
-			let language = data.target.parentElement.id.split("-")[1] 
+			let language = data.target.parentElement.id.split("-")[1] ;
 			if(_LOCALES.includes(language) && language != CurrentActiveLanguage) {
 				document.querySelector(".active-language").classList.toggle("active-language");
 				data.target.parentElement.classList.toggle("active-language");
