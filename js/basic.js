@@ -64,8 +64,12 @@ function write(id,word,dspeed,wspeed) {
  * @param {element} e The element to move the cursor to.
  */
 function blinkingCursor(e) {
-	let cursor = document.querySelector("#what-cursor");
-	e.after(cursor);
+	try {
+		let cursor = document.querySelector("#what-cursor");
+		e.after(cursor);
+	} catch(error) {
+		return;
+	}
 }
 
 /**
@@ -99,48 +103,51 @@ function populateProjects(json) {
 	let _CURRENT_BOX        = `<div class='contentbox item-${document.querySelectorAll("#displayRow > div").length}'></div>`
 	_CURRENT_ROW.innerHTML += _CURRENT_BOX
 	_CURRENT_BOX            = _CURRENT_ROW.querySelector(".contentbox:last-child")
-	
-	if('name' in _FIRST_OBJECT) {
-		_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header'>${_FIRST_OBJECT['name'][0]}</div></a>`
-		// Despite this checking for a length bigger than 1, we only support 2 languages.
-		if(_FIRST_OBJECT['name'].length > 1) {
-			_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", _LOCALES[0])
-			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="da">${_FIRST_OBJECT['name'][1]}</div></a>`
-		}
-	}
-	if('images' in _FIRST_OBJECT) {
-		// Add carousel if we have multiple images, else don't.
-		if(_FIRST_OBJECT['images'].length > 1) {
-			_CURRENT_BOX.innerHTML += `<div class='box-image'><section id="image-carousel" class="splide" aria-label="${_FIRST_OBJECT['name']}"><div class="splide__track"><ul class="splide__list"></ul></div></section></div>`
-			for (const property in _FIRST_OBJECT['images']) {
-				_CURRENT_BOX.querySelector(".splide__list").innerHTML += `<li class="splide__slide"><a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][property]}"></a></li>`
+	try {
+		if('name' in _FIRST_OBJECT) {
+			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header'>${_FIRST_OBJECT['name'][0]}</div></a>`
+			// Despite this checking for a length bigger than 1, we only support 2 languages.
+			if(_FIRST_OBJECT['name'].length > 1) {
+				_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", _LOCALES[0])
+				_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="da">${_FIRST_OBJECT['name'][1]}</div></a>`
 			}
-		} else {
-			_CURRENT_BOX.innerHTML += `<div class='box-image' aria-label="${_FIRST_OBJECT['name']}"></div>`
-			_CURRENT_BOX.querySelector(".box-image").innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][0]}"></a>`
 		}
+		if('images' in _FIRST_OBJECT) {
+			// Add carousel if we have multiple images, else don't.
+			if(_FIRST_OBJECT['images'].length > 1) {
+				_CURRENT_BOX.innerHTML += `<div class='box-image'><section id="image-carousel" class="splide" aria-label="${_FIRST_OBJECT['name']}"><div class="splide__track"><ul class="splide__list"></ul></div></section></div>`
+				for (const property in _FIRST_OBJECT['images']) {
+					_CURRENT_BOX.querySelector(".splide__list").innerHTML += `<li class="splide__slide"><a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][property]}"></a></li>`
+				}
+			} else {
+				_CURRENT_BOX.innerHTML += `<div class='box-image' aria-label="${_FIRST_OBJECT['name']}"></div>`
+				_CURRENT_BOX.querySelector(".box-image").innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><img src="${_FIRST_OBJECT['images'][0]}"></a>`
+			}
+		}
+		if('body' in _FIRST_OBJECT) {
+			_CURRENT_BOX.innerHTML += `<div class='box-body'>${_FIRST_OBJECT['body'][0]}</div>`
+			// Despite this checking for a length bigger than 1, we only support 2 languages.
+			if(_FIRST_OBJECT['body'].length > 1) {
+				_CURRENT_BOX.querySelector(`.box-body`).setAttribute("lang", _LOCALES[0])
+				_CURRENT_BOX.innerHTML += `<div class='box-body' lang="da">${_FIRST_OBJECT['body'][1]}</div>`
+			}
+			_CURRENT_BOX.querySelectorAll(`.box-body`).forEach((item) => item.innerHTML = item.innerHTML.format(_FIRST_OBJECT))
+		}
+		if('footer' in _FIRST_OBJECT) {
+			_CURRENT_BOX.innerHTML += `<div class="box-footer"><div class="box-break"></div><div class="box-footer-data"></div></div>`
+			if('date' in _FIRST_OBJECT['footer']) {
+				_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div>`
+			}
+			if('language' in _FIRST_OBJECT['footer']) {
+				_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-language cl-${_FIRST_OBJECT['footer']['language']}">${_FIRST_OBJECT['footer']['language']}</div>`
+			}
+		}
+		
+		json.Projects.splice(0,1)
+		populateProjects(json)
+	} catch(e) {
+		return;
 	}
-	if('body' in _FIRST_OBJECT) {
-		_CURRENT_BOX.innerHTML += `<div class='box-body'>${_FIRST_OBJECT['body'][0]}</div>`
-		// Despite this checking for a length bigger than 1, we only support 2 languages.
-		if(_FIRST_OBJECT['body'].length > 1) {
-			_CURRENT_BOX.querySelector(`.box-body`).setAttribute("lang", _LOCALES[0])
-			_CURRENT_BOX.innerHTML += `<div class='box-body' lang="da">${_FIRST_OBJECT['body'][1]}</div>`
-		}
-		_CURRENT_BOX.querySelectorAll(`.box-body`).forEach((item) => item.innerHTML = item.innerHTML.format(_FIRST_OBJECT))
-	}
-	if('footer' in _FIRST_OBJECT) {
-		_CURRENT_BOX.innerHTML += `<div class="box-footer"><div class="box-break"></div><div class="box-footer-data"></div></div>`
-		if('date' in _FIRST_OBJECT['footer']) {
-			_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-date">${_FIRST_OBJECT['footer']['date']}</div>`
-		}
-		if('language' in _FIRST_OBJECT['footer']) {
-			_CURRENT_BOX.querySelector(`.box-footer-data`).innerHTML += `<div class="box-footer-language cl-${_FIRST_OBJECT['footer']['language']}">${_FIRST_OBJECT['footer']['language']}</div>`
-		}
-	}
-	
-	json.Projects.splice(0,1)
-	populateProjects(json)
 }
 
 window.onload = function() {
