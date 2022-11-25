@@ -22,16 +22,15 @@ var projects = {
 		},
 		{
 			"name": [
-				"Card Database",
-				"Kort Database"
+				"TCG Database"
 			],
 			"link": "https://github.com/EnSnack/Card-Database",
 			"images": [
 				"images/projects/9/1.png"
 			],
 			"body": [
-				"<b>Tools:</b> TypeScript & NodeJS\nA simple card database with fake cards, written to show my skill in TypeScript, and although the site is very basic but it does give a pretty good idea.\n%lsRead More...%ae",
-				"<b>Værktøjer:</b> TypeScript & NodeJS\nEn simpel kort database med falske kort, lavet for at vise mine TypeScript evner, selvom at siden er basisk burde den stadig give en god idé.\n%lsLæs Mere...%ae"
+				"<b>Tools:</b> TypeScript & NodeJS\nA simple TCG database with fake cards, written to show my skill in TypeScript, and although the site is very basic but it does give a pretty good idea.\n%lsRead More...%ae",
+				"<b>Værktøjer:</b> TypeScript & NodeJS\nEn simpel TCG database med falske kort, lavet for at vise mine TypeScript evner, selvom at siden er basisk burde den stadig give en god idé.\n%lsLæs Mere...%ae"
 			],
 			"footer": {
 				"date": "21/10-2022",
@@ -100,12 +99,12 @@ var projects = {
 			],
 			"link": "https://github.com/EnSnack/GML-PFT-Prototype",
 			"body": [
-				"A very basic prototype of a platformer game inspired VERY heavily by Wario Land 4, one of my favourite platformers.\n%lsRead More...%ae",
-				"En meget basisk prototype af en platformer inspireret MEGET af Wario Land 4, en af mine yndlings platformer spil.\n%lsLæs Mere...%ae"
+				"<b>Tools:</b> GameMaker Studio\nA very basic prototype of a platformer game inspired VERY heavily by Wario Land 4, one of my favourite platformers.\n%lsRead More...%ae",
+				"<b>Værktøjer:</b> GameMaker Studio\nEn meget basisk prototype af en platformer inspireret MEGET af Wario Land 4, en af mine yndlings platformer spil.\n%lsLæs Mere...%ae"
 			],
 			"footer": {
 				"date": "20/08-2018",
-				"language": "GML"
+				"language": "GameMaker Language"
 			}
 		},
 		{
@@ -118,12 +117,12 @@ var projects = {
 			],
 			"link": "https://github.com/EnSnack/GML-RPG-Prototype",
 			"body": [
-				"A short prototype of an RPG game inspired by games like Super Mario RPG where timing is important.\n%lsRead More...%ae",
-				"En kort prototype af et rollespil inspireret af spil som Super Mario RPG hvor timing er vigtig.\n%lsLæs Mere...%ae"
+				"<b>Tools:</b> GameMaker Studio\nA short prototype of an RPG game inspired by games like Super Mario RPG where timing is important.\n%lsRead More...%ae",
+				"<b>Værktøjer:</b> GameMaker Studio\nEn kort prototype af et rollespil inspireret af spil som Super Mario RPG hvor timing er vigtig.\n%lsLæs Mere...%ae"
 			],
 			"footer": {
 				"date": "05/07-2018",
-				"language": "GML"
+				"language": "GameMaker Language"
 			}
 		},
 		{

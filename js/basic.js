@@ -1,6 +1,4 @@
-/*
-	Typewriter Style Text
-*/
+// Global Variables
 const _LOCALES = ['en', 'da'];
 let TypeWriterActive = false;
 let CurrentActiveLanguage = navigator.userLanguage || navigator.language;
@@ -31,9 +29,10 @@ function write(id,word,dspeed,wspeed) {
 			if(element.innerHTML.length == 0) {
 				clearInterval(erase)
 				erase = null;
+				
 				// Hard-coded exceptions for the English language.
 				// Just checking for the letter isn't going to work, A vs An is based on sound, not letter.
-				if(CurrentActiveLanguage == "en" && id == "what-adj") {
+				if(CurrentActiveLanguage == _LOCALES[0] && id == "what-adj") {
 					const _EXCEPTIONS = ["enthusiastic","astute"]
 					document.getElementById("what-pre").innerHTML = _EXCEPTIONS.includes(word) ? "An" : "A"
 				}
@@ -96,26 +95,16 @@ function populateProjects(json) {
 	if(Object.keys(json.Projects).length == 0) return;
 	const _FIRST_OBJECT = json.Projects[0]
 	
-	// Old row handling, no longer needed since we make amount of items on rows dynamic
-	/*if(document.querySelector("div[id^=row-]:last-child") === null || document.querySelector("div[id^=row-]:last-child").length === 0) {
-		document.querySelector("#portfolio .content").innerHTML += "<div class='row' id='row-1'></div>"
-	} else if(document.querySelectorAll("div[id^=row-]:last-child > *").length >= 4) {
-		document.querySelector("#portfolio .content").innerHTML += `<div class='row' id='row-${parseInt(document.querySelector("div[id^=row-]:last-child").id.split("-")[1])+1}'></div>`
-	}*/
-	
 	const _CURRENT_ROW      = document.querySelector("#displayRow")
 	let _CURRENT_BOX        = `<div class='contentbox item-${document.querySelectorAll("#displayRow > div").length}'></div>`
 	_CURRENT_ROW.innerHTML += _CURRENT_BOX
 	_CURRENT_BOX            = _CURRENT_ROW.querySelector(".contentbox:last-child")
 	
-	// No longer does, I have to do unique code execution based on type :(
-	//* Rids us some code duplication.
-	//const _TYPES            = ['name','','body']
 	if('name' in _FIRST_OBJECT) {
 		_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header'>${_FIRST_OBJECT['name'][0]}</div></a>`
 		// Despite this checking for a length bigger than 1, we only support 2 languages.
 		if(_FIRST_OBJECT['name'].length > 1) {
-			_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", "en")
+			_CURRENT_BOX.querySelector(`.box-header`).setAttribute("lang", _LOCALES[0])
 			_CURRENT_BOX.innerHTML += `<a href='${_FIRST_OBJECT['link']}' target='_blank'><div class='box-header' lang="da">${_FIRST_OBJECT['name'][1]}</div></a>`
 		}
 	}
@@ -135,7 +124,7 @@ function populateProjects(json) {
 		_CURRENT_BOX.innerHTML += `<div class='box-body'>${_FIRST_OBJECT['body'][0]}</div>`
 		// Despite this checking for a length bigger than 1, we only support 2 languages.
 		if(_FIRST_OBJECT['body'].length > 1) {
-			_CURRENT_BOX.querySelector(`.box-body`).setAttribute("lang", "en")
+			_CURRENT_BOX.querySelector(`.box-body`).setAttribute("lang", _LOCALES[0])
 			_CURRENT_BOX.innerHTML += `<div class='box-body' lang="da">${_FIRST_OBJECT['body'][1]}</div>`
 		}
 		_CURRENT_BOX.querySelectorAll(`.box-body`).forEach((item) => item.innerHTML = item.innerHTML.format(_FIRST_OBJECT))
@@ -155,6 +144,7 @@ function populateProjects(json) {
 }
 
 window.onload = function() {
+	// Local Constants
 	const _NOUN_TIME    = 4000;
 	const _ADJ_TIME     = 2350;
 	const _CURSOR_BLINK = 500;
@@ -174,6 +164,7 @@ window.onload = function() {
 	
 	let adjIndex=0;
 	let nounIndex=0;
+	// Noun Handling, time based on _NOUN_TIME constant
 	setInterval(function() {
 		write("what-noun",_WORDS_JSON.Nouns[nounIndex][CurrentActiveLanguage],_WRITE_SPEED,_WRITE_SPEED).then((success) => {
 			if(success) {
@@ -183,6 +174,7 @@ window.onload = function() {
 			return console.error(e);
 		})
 	},_NOUN_TIME)
+	// Adjective Handling, time based on _ADJ_TIME constant
 	setInterval(function() {
 		write("what-adj",_WORDS_JSON.Adjectives[adjIndex][CurrentActiveLanguage],_WRITE_SPEED,_WRITE_SPEED).then((success) => {
 			if(success) {				
@@ -192,6 +184,7 @@ window.onload = function() {
 			return console.error(e);
 		})
 	},_ADJ_TIME)
+	// Cursor Blinking Handling, time based on _CURSOR_BLINK constant
 	setInterval(function() {
 		if(!TypeWriterActive) {
 			document.querySelector("#what-cursor").style.display = (document.querySelector("#what-cursor").style.display == "none") ? "" : "none";
@@ -200,6 +193,7 @@ window.onload = function() {
 		}
 	},_CURSOR_BLINK)
 	
+	// Click event handler for page switching and navbar switching
 	document.querySelectorAll("#navbar #navbox ul li a").forEach((item) => { item.addEventListener("click", function() {
 		if(item.classList[1] == "active") return;
 		const _CUR_ACTIVE = document.querySelector(".nav-link.active");
@@ -210,6 +204,7 @@ window.onload = function() {
 		item.classList.toggle("active");
 	})})
 
+	// Click event handler for popup button (and closing)
 	document.querySelectorAll(".btn-popup, #close").forEach((item) => { item.addEventListener("click", function (data) {
 			const _OUR_TARGET    = data.target.tagName == "IMG" ? findAncestor(data.target,".popup").id : `${data.target.id}-popup`;
 			const _POPUP_ELEMENT = document.querySelector(`#${_OUR_TARGET}`);
@@ -221,11 +216,13 @@ window.onload = function() {
 		});
 	});
 	
+	// Click event handler for copy email button
 	document.querySelector("#copy img").addEventListener("click", function () {
-		navigator.clipboard.writeText("wollausteffen@gmail.com");
+		navigator.clipboard.writeText(document.querySelector(".popup-text > a > span").innerHTML);
 		document.querySelector(".popup-tooltip-box").classList.toggle("popup-tooltip-box-active");
 	});
 	
+	// Transition End event handler for popup on homepage
 	document.querySelector(".popup").addEventListener("transitionend", function (data) {
 		if(data.target.classList[0] == "popup" && data.target.classList.length == 2 && data.propertyName == "width") {
 			document.querySelector(".popup-text").classList.toggle("popup-text-active");
@@ -234,13 +231,12 @@ window.onload = function() {
 		}
 	});
 	
+	// Animation End event handler for popup on homepage
 	document.querySelector(".popup").addEventListener("animationend", function (data) {
 		if(data.target.classList[0] == "popup-tooltip-box") document.querySelector(".popup-tooltip-box").classList.toggle("popup-tooltip-box-active");
 	});
 	
-	/*
-		Localize Function for Language Handling
-	*/
+    // Click event handler for localization
 	document.querySelectorAll(".language").forEach((item) => {
 		item.addEventListener("click", function (data) {
 			let language = data.target.parentElement.id.split("-")[1] 
@@ -260,9 +256,7 @@ window.onload = function() {
 	});
 }
 
-/*
-	https://stackoverflow.com/questions/22119673/find-the-closest-ancestor-element-that-has-a-specific-class
-*/
+// https://stackoverflow.com/questions/22119673/find-the-closest-ancestor-element-that-has-a-specific-class
 function findAncestor (el, sel) {
     while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el,sel)));
     return el;
