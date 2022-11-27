@@ -1,0 +1,38 @@
+/*
+# Background
+*/
+#vanta-background {
+	display:none;
+}
+body {
+	background: #192214 url('../images/home/nojs-background.png');
+}
+
+/*
+# Language
+*/
+:lang(da) {
+	display:none;
+}
+#language-box {
+	display:none;
+}
+
+/*
+# Navbar
+*/
+#navbox > ul > li > a:not(.no-javascript) {
+	display:none;
+}
+#navbox > ul > noscript {
+	display:flex;
+	width:100%;
+	justify-content:space-around;
+}
+
+/*
+# Home
+*/
+#home:not(.section-show) {
+	display:none;
+}

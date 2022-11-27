@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+	<!--
+		Dear Reader!
+		
+		This is strictly for no javascript! It is not used for any other reason!
+		Please refer to index.html if you DO have Javascript enabled.
+	-->
+
+<head>
+	<title>Percussive Maintenance</title>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	<!-- OG Tags -->
+	<meta content="Steffen's Portfolio" property="og:title" />
+	<meta content="A story about me now, and 'back then' in form of old projects." property="og:description" />
+	<meta property="og:type" content="website" />
+	<meta content="https://ensnack.github.io/SC-Portfolio/" property="og:url" />
+	<meta content="https://ensnack.github.io/SC-Portfolio/images/home/me.png" property="og:image" />
+	<!-- Twitter Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	
+	<meta property="twitter:url" content="https://ensnack.github.io/SC-Portfolio/">
+	<meta property="twitter:title" content="Percussive Maintenance">
+	<meta property="twitter:description" content="A story about me now, and 'back then' in form of old projects.">
+	<meta property="twitter:image" content="images/home/me.png">
+	<meta content="#85b649" data-react-helmet="true" name="theme-color" />
+	
+	<!--
+		BACKGROUND STUFF
+		CREDITS TO:
+		Vanta.js
+	-->
+	<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.22/vendor/three.r119.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.22/dist/vanta.waves.min.js"></script>
+	
+	<!--
+		CAROUSEL
+		CREDITS TO:
+		Splide.js
+	-->
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
+	
+	<!-- JSON first -->
+	<script src="js/words.js"></script>
+	<script src="js/projects.js"></script>
+	
+	<script src="js/basic.js"></script>
+	
+	<link media="screen" href="css/style.css" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>	
+	<header id="header">
+		<nav id="navbar">
+			<div id="navbox">
+				<ul>
+				  <noscript>
+					  <li>
+						<a class="nav-link no-javascript" href="index.html">
+							<svg class="icon icon-home" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+								<path d="M32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9z"></path>
+							</svg>
+							<span lang="en">Home</span>
+						</a>
+					  </li>
+					  <li>
+						<a class="nav-link active no-javascript">
+							<svg class="icon icon-book" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+								<path d="M28 4v26h-21c-1.657 0-3-1.343-3-3s1.343-3 3-3h19v-24h-20c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h24v-28h-2z"></path>
+								<path d="M7.002 26v0c-0.001 0-0.001 0-0.002 0-0.552 0-1 0.448-1 1s0.448 1 1 1c0.001 0 0.001-0 0.002-0v0h18.997v-2h-18.997z"></path>
+							</svg>
+							<span lang="en">CV</span>
+						</a>
+					  </li>
+				  </noscript>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<noscript>
+		<!-- NoJSCSS -->
+		<link media="screen" href="css/nojs.css" rel="stylesheet">
+	</noscript>
+	
+	<section id="resume" class="content-split section-show">
+		<content class="content">
+			<div class="contentbox large-box left">
+				<div id="education">
+					<a href="files/CV - English.pdf" target="_blank" class="button" id="dl" lang="en">
+						<img src="images/svg/download.svg"></img>
+						<span class="button-text">Download</span>
+					</a>
+					<header class="contentbox-header" lang="en">Education</header>
+					<div class="column-item first-item">
+						<div class="item-header" lang="en">Bachelor (BA) in Digital Design – IT, Aesthetic & Interaction</div>
+						<div class="item-year">2015 - 2019</div>
+						<div class="item-content" lang="en">
+							<p><b>Institute</b> - Aarhus University, Aarhus</p>
+							<p><b>Modules</b> - Aesthetic Programming, Industrial Design, Interactive Design and more</p>
+							<p><b>Supplementary Degree</b> - Computer Science (BSc)</p>
+							<p><b>Supplementary Modules</b> - Introduction to programming, Calculus Alpha, Foundations of Algorithms and Data Structures and more</p>
+						</div>
+					</div>
+					<div class="linebreak"></div>
+					<div class="column-item first-item">
+						<div class="item-header" lang="en">Certificate for Upper Secondary</div>
+						<div class="item-year">2012 - 2015</div>
+						<div class="item-content" lang="en">
+							<p><b>Institute</b> - Fredericia Gymnasium, Fredericia</p>
+							<p><b>Modules</b> - Danish A, English A, History A, Media Studies B and Social Science B</p>
+							<p><b>Supplementary Modules</b> - French Beginner A and Mathematics A</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-right">
+				<div class="contentbox small-box right">
+					<div id="skills">
+						<header class="contentbox-header">
+							<span lang="en">Relevant Skills</span>
+						</header>
+						<div class="column-item" style="border-left:none;">
+							<div class="item-content" lang="en">
+								<p><b>Familiarity with the following technologies, in estimated order of proficiency:</b><br>
+									<li>JavaScript, HTML, CSS, Java, Python 2.x and 3.x, LUA, C#, C++, and PHP.</li>
+								</p>
+								<p><b>Skilled in relational databases and their management systems.</b></p>
+								<p><b>Frequent usage of front-end development tools such as JQuery and React.</b></p>
+								<p><b>Experience in working within an agile framework and familiariaty with the use of SCRUM and Kanban methodologies.</b></p>
+								<p><b>Good understanding of industry-standard source control principals.</b></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contentbox small-box right">
+					<div id="experience">
+						<header class="contentbox-header">
+							<span lang="en">Work Experience</span>
+						</header>
+						<div class="column-item first-item">
+							<div class="item-header" lang="en">Shop Assistant</div>
+							<div class="item-year">2012 - 2013</div>
+							<div class="item-content" lang="en">
+								<p><b>Workplace</b> - Provianten, Fredericia</p>
+								<p><b>What it has taught me</b> - Working as a shop assistant for a small convenience store as my first job meant that I got my first taste of responsibility, teamwork, all the while I built a more extroverted personality as a result of the many customers that would enter the store and commonly start conversations with oneself.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+		</content>
+	</section>
+</body>
+</html>
