@@ -647,7 +647,7 @@ a {
 	display:flex;
 	flex-direction:row;
 	flex-wrap: wrap;
-	justify-content:space-between;
+	justify-content:flex-start;
 }
 
 #portfolio .contentbox {
@@ -657,6 +657,7 @@ a {
 	max-height:460px;
 	padding:30px;
 	margin-bottom:20px;
+	margin-right:3%;
 }
 
 .box-header {

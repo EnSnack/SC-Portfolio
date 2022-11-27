@@ -22,6 +22,24 @@ var projects = {
 		},
 		{
 			"name": [
+				"RuneScript Cover Letter",
+				"RuneScript Ansøgning"
+			],
+			"link": "https://github.com/EnSnack/RuneScript_Coverletter",
+			"images": [
+				"images/projects/10/1.png"
+			],
+			"body": [
+				"A cover letter for Jagex written in basic RuneScript based on released images of the language.\n%lsRead More...%ae",
+				"En ansøgning til Jagex skrevet i basisk RuneScript baseret på udgivet billeder af sproget\n%lsLæs Mere...%ae"
+			],
+			"footer": {
+				"date": "27/11-2022",
+				"language": "RuneScript"
+			}	
+		},
+		{
+			"name": [
 				"TCG Database"
 			],
 			"link": "https://github.com/EnSnack/Card-Database",
